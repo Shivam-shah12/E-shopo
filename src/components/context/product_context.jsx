@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import reducer from "../reducer/productReducer.jsx";
 import { GET_WEBSITE_PRODUCT } from "../../utils/ApiRoutes";
+import { useNavigate } from "react-router-dom";
 
 const AppContext = createContext();
 
@@ -13,13 +14,18 @@ const initialState = {
 
 
 const AppProvider = ({ children }) => {
+  const navigate=useNavigate();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getProducts = async () => {
     try {
         const {data}=await axios.get(GET_WEBSITE_PRODUCT);
+        if(data.message==="INVALID_TOKEN")
+        {
+          navigate("/login");
+        }
         const allProducts=await data.allProducts;
-        console.log(allProducts)
+        // console.log(allProducts)
         const products = allProducts.map((elem, id) => {
           return {
               id: elem._id, // Use elem._id instead of _id directly
