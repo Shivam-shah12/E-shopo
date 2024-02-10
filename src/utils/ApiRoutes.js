@@ -1,6 +1,3 @@
-import dotenv from "dotenv"
-dotenv.config();
-
 export const HOST=process.env.BACKEND_URL
 
 const USER_ROUTES=`${HOST}/api/user`;
