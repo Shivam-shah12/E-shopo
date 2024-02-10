@@ -1,4 +1,3 @@
-import { likedProduct } from '../../../../server/controller/user/userFeatures';
 import { createSlice } from "@reduxjs/toolkit";
 
 // Load the initial state from localStorage
