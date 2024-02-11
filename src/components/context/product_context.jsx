@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import reducer from "../reducer/productReducer.jsx";
 import { GET_WEBSITE_PRODUCT } from "../../utils/ApiRoutes";
-import { useNavigate } from "react-router-dom";
+
 
 const AppContext = createContext();
 
@@ -14,7 +14,6 @@ const initialState = {
 
 
 const AppProvider = ({ children }) => {
-  const navigate=useNavigate();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getProducts = async () => {
@@ -22,7 +21,8 @@ const AppProvider = ({ children }) => {
         const {data}=await axios.get(GET_WEBSITE_PRODUCT);
         if(data.message==="INVALID_TOKEN")
         {
-          navigate("/login");
+            alert("please Login First , Because Your Token is expired")
+            return ;
         }
         const allProducts=await data.allProducts;
         // console.log(allProducts)

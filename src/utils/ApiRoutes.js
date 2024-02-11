@@ -1,4 +1,4 @@
-export const HOST=process.env.BACKEND_URL
+export const HOST="https://e-shopo.onrender.com"
 
 const USER_ROUTES=`${HOST}/api/user`;
 const SELLER_ROUTES=`${HOST}/api/seller`
