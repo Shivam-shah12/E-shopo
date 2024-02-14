@@ -11,7 +11,7 @@ import { Provider } from "react-redux";
 // import reducer,{initialState} from '@/reducer/StateReducers.js'
 // import { StateProvider } from "@/context/StateContext.jsx";
 // import { FilterContextProvider } from "./components/context/filter_context.jsx";
-import rootReducer from './reducer/StateReducers';
+import rootReducer from './reducer/StateReducers.js';
 import { AppProvider } from "./components/context/product_context.jsx";
 import { FilterContextProvider } from "./components/context/filter_context.jsx";
 const store = configureStore({
