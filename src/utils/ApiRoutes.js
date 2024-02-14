@@ -1,6 +1,6 @@
 export const HOST="https://e-shopo.onrender.com"
 
-const USER_ROUTES=`${HOST}/api/user`;
+const USER_ROUTES=`${HOST}/api/user`
 const SELLER_ROUTES=`${HOST}/api/seller`
 // {email,password}
 export const LOGIN_USER_ROUTE=`${USER_ROUTES}/login`
