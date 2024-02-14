@@ -26,7 +26,7 @@ const ProfileSidebar = ({ setActive, active }) => {
   console.log(userType)
  const logoutHandler=()=>{
   console.log("it working logut")
-  dispatch(setUserTypeAndCredentials({undefined,undefined}))
+  dispatch(setUserTypeAndCredentials({undefined}))
   dispatch(setToken(undefined))
   navigate("/")
  
